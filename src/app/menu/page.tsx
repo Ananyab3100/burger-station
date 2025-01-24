@@ -246,7 +246,11 @@ export default function MenuSlider() {
             {menuData.map((category, index) => (
               <div
                 key={category.id}
-                ref={(el) => (categoryRefs.current[index] = el)}
+
+                ref={(el) => {
+                  categoryRefs.current[index] = el; // Assign the element to the ref array
+                }}
+                
                 className={cn(
                   "flex-shrink-0 cursor-pointer transition-all duration-300",
                   "flex flex-col items-center gap-3 w-20 sm:w-24 md:w-28",
